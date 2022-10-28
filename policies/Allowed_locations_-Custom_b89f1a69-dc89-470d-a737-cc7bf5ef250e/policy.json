@@ -1,0 +1,49 @@
+{
+ "properties": {
+  "displayName": "Allowed locations -Custom",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements. Excludes resource groups, Microsoft.AzureActiveDirectory/b2cDirectories, and resources that use the 'global' region.",
+  "metadata": {
+   "category": "General",
+   "createdBy": "c7e01277-7586-4aad-8abb-8b8ad2d4c89d",
+   "createdOn": "2022-10-28T14:28:29.7080575Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "listOfAllowedLocations": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed locations",
+     "description": "The list of locations that can be specified when deploying resources.",
+     "strongType": "location"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "location",
+      "notIn": "[parameters('listOfAllowedLocations')]"
+     },
+     {
+      "field": "location",
+      "notEquals": "global"
+     },
+     {
+      "field": "type",
+      "notEquals": "Microsoft.AzureActiveDirectory/b2cDirectories"
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/c4ca1c63-8685-4a50-bfd0-793cc56ea3be/providers/Microsoft.Authorization/policyDefinitions/b89f1a69-dc89-470d-a737-cc7bf5ef250e",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "b89f1a69-dc89-470d-a737-cc7bf5ef250e"
+}

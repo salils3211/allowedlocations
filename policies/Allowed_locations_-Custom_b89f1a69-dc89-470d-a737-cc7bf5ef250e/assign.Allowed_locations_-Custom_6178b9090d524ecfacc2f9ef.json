@@ -1,0 +1,33 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Allowed locations -Custom",
+  "policyDefinitionId": "/subscriptions/c4ca1c63-8685-4a50-bfd0-793cc56ea3be/providers/Microsoft.Authorization/policyDefinitions/b89f1a69-dc89-470d-a737-cc7bf5ef250e",
+  "scope": "/subscriptions/c4ca1c63-8685-4a50-bfd0-793cc56ea3be",
+  "notScopes": [],
+  "parameters": {
+   "listOfAllowedLocations": {
+    "value": [
+     "centralindia"
+    ]
+   }
+  },
+  "metadata": {
+   "assignedBy": "Salil Sharma",
+   "parameterScopes": {
+    "listOfAllowedLocations": "/subscriptions/c4ca1c63-8685-4a50-bfd0-793cc56ea3be"
+   },
+   "createdBy": "c7e01277-7586-4aad-8abb-8b8ad2d4c89d",
+   "createdOn": "2022-10-28T14:32:06.4925538Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/c4ca1c63-8685-4a50-bfd0-793cc56ea3be/providers/Microsoft.Authorization/policyAssignments/6178b9090d524ecfacc2f9ef",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "6178b9090d524ecfacc2f9ef"
+}
